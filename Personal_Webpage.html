@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>My Personal Webpage</title>
+    
+    <!-- Import FontAwesome for Social Icons & Basic Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Import Devicon for Tech Skill Programming Logos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    
+    <style>
+
+        
+        body {
+            background-color: #000000; /* Fixed solid black background */
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 30px 5%;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 38px;
+            text-align: center;
+            border-bottom: 2px solid #444;
+            padding-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            color: #b3b3b3;
+            font-size: 26px;
+            margin-top: 40px;
+            border-left: 5px solid #555;
+            padding-left: 12px;
+        }
+
+        h3 {
+            color: #d1d1d1;
+            font-size: 20px;
+        }
+
+        p {
+            color: #aaaaaa;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .card-container {
+            background-color: #242426;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.6);
+            margin-bottom: 30px;
+            border: 1px solid #333;
+        }
+
+    
+        ul {
+            list-style-type: square;
+            color: #cccccc;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        /* Tech Skills List */
+        .tech-list {
+            list-style-type: none; 
+            padding-left: 0;
+        }
+
+        .tech-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 17px;
+            color: #e0e0e0;
+        }
+
+        .tech-list i {
+            font-size: 24px;
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+
+        /* Table Styling*/
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: #1a1a1c;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.6);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        caption {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        th, td {
+            border: 1px solid #333;
+            padding: 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #111;
+            color: #ffffff;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        td {
+            font-size: 14px;
+            color: #bbbbbb;
+        }
+
+        /* Base Buttons */
+        .btn {
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+        }
+
+        
+        .btn-alert {
+            background-color: #cd5c5c; 
+            color: #ffffff;
+            border: 1px solid #d46b6b;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        .btn-alert:hover {
+            background-color: #e06666; 
+            box-shadow: 0 6px 12px rgba(205, 92, 92, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Social Media Buttons */
+        .social-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-social {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 22px;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-social:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+        }
+
+        .btn-instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .btn-facebook {
+            background-color: #1877F2; 
+        }
+
+        .btn-linkedin {
+            background-color: #0A66C2; 
+        }
+
+        /* Form Inputs and layout */
+        label {
+            font-weight: bold;
+            color: #dddddd;
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .inline-label {
+            display: inline;
+            font-weight: normal;
+            margin-top: 0;
+            margin-right: 15px;
+            color: #cccccc;
+        }
+
+        input[type="text"], 
+        input[type="email"], 
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            background-color: #2a2a2c;
+            border: 1px solid #444;
+            border-radius: 5px;
+            color: #ffffff;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        input[type="text"]:focus, 
+        input[type="email"]:focus, 
+        textarea:focus {
+            outline: none;
+            border-color: #777;
+            background-color: #333;
+        }
+
+        .radio-group, .checkbox-group {
+            background-color: #1e1e20;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #333;
+            margin-bottom: 15px;
+        }
+
+        .form-btn {
+            background-color: #388e3c;
+            color: white;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
+        .form-btn:hover {
+            background-color: #4caf50;
+        }
+
+        .btn-reset {
+            background-color: #d32f2f;
+            color: white;
+        }
+
+        .btn-reset:hover {
+            background-color: #f44336;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>My Personal Webpage</h1>
+
+
+    <button class="btn btn-alert" onclick="alert('Hi you have reached my Webpage. I hope you get to know me more using my designed webpage.\n\n                                                                      XOXO, Luxx')">
+        Welcome Message!
+    </button>
+
+    <div class="card-container">
+        <h2>My Skills</h2>
+        
+        <h3>Soft Skills</h3>
+        <ul>
+            <li>Good communication</li>
+            <li>Leadership</li>
+            <li>Good listener</li>
+            <li>Obedient</li>
+        </ul>
+
+        <h3>Technical Skills</h3>
+        <ul class="tech-list">
+            <li><i class="devicon-html5-plain colored"></i> Intermediate HTML</li>
+            <li><i class="devicon-java-plain colored"></i> Java</li>
+            <li><i class="devicon-c-plain colored"></i> C programming</li>
+            <li><i class="fas fa-terminal" style="color: #4ca1af;"></i> COBOL</li>
+            <li><i class="devicon-python-plain colored"></i> Intermediate Python</li>
+        </ul>
+    </div>
+
+    <h2>Schedule</h2>
+    <table>
+        <caption>Class Schedule</caption>
+        <thead>
+        <tr>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th> 
+            <th>Friday</th>
+            <th>Saturday</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>7:30 AM - 10:30 AM</td>
+            <td>Project Management</td>
+            <td></td>
+            <td></td>
+            <td>Project Management (8:00 AM - 10:00 AM)</td>
+            <td></td>
+            <td rowspan="2">Web Development (7:30 AM - 12:30 PM)</td>
+        </tr>
+        <tr>
+            <td>10:30 AM - 1:30 PM</td>
+            <td>Multimedia</td>
+            <td></td>
+            <td></td>
+            <td>Multimedia (10:30 AM - 12:30 PM)</td>
+            <td></td>
+            
+        </tr>
+        <tr>
+            <td>1:30 PM - 4:30 PM</td>
+            <td></td>
+            <td>Systems Integration and Architecture 1</td>
+            <td></td>
+            <td>Art Appreciation</td>
+            <td></td>
+            <td rowspan="2">Database Administration (1:30 PM - 6:30 PM)</td>
+        </tr>
+        <tr>
+            <td>4:30 PM - 6:00 PM</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            
+        </tr>
+        <tr>
+            <td>6:00 PM - 9:00 PM</td>
+            <td></td>
+            <td>Fundamentals of Research</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- SECTION 3: Social Buttons -->
+    <h2>Here are my Socials if you want to follow me</h2>
+    <div class="card-container social-container">
+        <a href="https://www.instagram.com/deluxx__13/" target="_blank" class="btn-social btn-instagram">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="https://www.facebook.com/luckychristian.decastro" target="_blank" class="btn-social btn-facebook">
+            <i class="fab fa-facebook-f"></i> Facebook
+        </a>
+        <a href="https://www.linkedin.com/in/lucky-christian-de-castro-4b163b306/?isSelfProfile=true" target="_blank" class="btn-social btn-linkedin">
+            <i class="fab fa-linkedin-in"></i> LinkedIn
+        </a>
+    </div>
+
+    <!-- SECTION 4: Contact Form -->
+    <h2>Submit a Response</h2>
+    <div class="card-container">
+        <p>This form will allow you to contact me and email me by sending a response.</p>
+        
+        <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
+            
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+            <label>Gender:</label>
+            <div class="radio-group">
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male" class="inline-label">Male</label>
+                
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female" class="inline-label">Female</label>
+                
+                <input type="radio" id="prefer_not" name="gender" value="prefer_not_to_say">
+                <label for="prefer_not" class="inline-label">Prefer not to say</label>
+            </div>
+
+            <label>Hobbies:</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="reading" name="hobbies" value="reading">
+                <label for="reading" class="inline-label">Reading</label>
+                
+                <input type="checkbox" id="sports" name="hobbies" value="sports">
+                <label for="sports" class="inline-label">Sports</label>
+                
+                <input type="checkbox" id="coding" name="hobbies" value="coding">
+                <label for="coding" class="inline-label">Coding</label>
+
+                <input type="checkbox" id="music" name="hobbies" value="music">
+                <label for="music" class="inline-label">Music</label><br><br>
+
+                <input type="checkbox" id="watching" name="hobbies" value="watching">
+                <label for="watching" class="inline-label">Watching</label>
+
+                <input type="checkbox" id="instruments" name="hobbies" value="playing musical instruments">
+                <label for="instruments" class="inline-label">Playing musical instruments</label>
+
+                <input type="checkbox" id="eating" name="hobbies" value="eating">
+                <label for="eating" class="inline-label">Eating</label>
+
+                <input type="checkbox" id="gaming" name="hobbies" value="playing online games">
+                <label for="gaming" class="inline-label">Playing online games</label>
+            </div>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here..."></textarea>
+
+            <button type="submit" class="btn form-btn">Submit</button>
+            <button type="reset" class="btn btn-reset">Reset</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
